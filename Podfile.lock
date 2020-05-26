@@ -1,0 +1,16 @@
+PODS:
+  - SimpleTabBarAnimations (1.1.0)
+
+DEPENDENCIES:
+  - SimpleTabBarAnimations
+
+SPEC REPOS:
+  trunk:
+    - SimpleTabBarAnimations
+
+SPEC CHECKSUMS:
+  SimpleTabBarAnimations: 62982ab51a516edd631e04c3a1c6e83d51e9c49c
+
+PODFILE CHECKSUM: 35c1423a2ffdd45a50823ca77848beacab3c7d01
+
+COCOAPODS: 1.9.1

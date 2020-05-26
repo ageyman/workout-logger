@@ -6,5 +6,6 @@ target 'WorkoutLogger' do
   use_frameworks!
 
   # Pods for WorkoutLogger
+pod 'SimpleTabBarAnimations'
 
 end
