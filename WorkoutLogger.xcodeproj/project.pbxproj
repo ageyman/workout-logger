@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A24C8A014FCEBF0F7C99F2A5 /* Pods_WorkoutLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4865D064F4F831AAFD0503BE /* Pods_WorkoutLogger.framework */; };
+		C73C6CA0247DA79000F3C2AC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C6C9F247DA79000F3C2AC /* Coordinator.swift */; };
+		C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C6CA1247DA7A200F3C2AC /* Coordinatable.swift */; };
+		C73C6CA4247DA7B700F3C2AC /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */; };
 		C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */; };
-		C75B0418247DA3B4000EF5F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B0417247DA3B4000EF5F2 /* SceneDelegate.swift */; };
-		C75B041A247DA3B4000EF5F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B0419247DA3B4000EF5F2 /* ViewController.swift */; };
-		C75B041D247DA3B4000EF5F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B041B247DA3B4000EF5F2 /* Main.storyboard */; };
 		C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75B041E247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld */; };
 		C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75B0421247DA3B5000EF5F2 /* Assets.xcassets */; };
 		C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B0423247DA3B5000EF5F2 /* LaunchScreen.storyboard */; };
@@ -21,11 +21,11 @@
 		4865D064F4F831AAFD0503BE /* Pods_WorkoutLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		737842A04C272B3A70AD1586 /* Pods-WorkoutLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutLogger.debug.xcconfig"; path = "Target Support Files/Pods-WorkoutLogger/Pods-WorkoutLogger.debug.xcconfig"; sourceTree = "<group>"; };
 		C08A7C60C9994B530BAB84CD /* Pods-WorkoutLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutLogger.release.xcconfig"; path = "Target Support Files/Pods-WorkoutLogger/Pods-WorkoutLogger.release.xcconfig"; sourceTree = "<group>"; };
+		C73C6C9F247DA79000F3C2AC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C73C6CA1247DA7A200F3C2AC /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		C75B0412247DA3B4000EF5F2 /* WorkoutLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C75B0417247DA3B4000EF5F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C75B0419247DA3B4000EF5F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C75B041C247DA3B4000EF5F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C75B041F247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutLogger.xcdatamodel; sourceTree = "<group>"; };
 		C75B0421247DA3B5000EF5F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C75B0424247DA3B5000EF5F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,6 @@
 				737842A04C272B3A70AD1586 /* Pods-WorkoutLogger.debug.xcconfig */,
 				C08A7C60C9994B530BAB84CD /* Pods-WorkoutLogger.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -60,6 +59,16 @@
 				4865D064F4F831AAFD0503BE /* Pods_WorkoutLogger.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C73C6C9E247DA78000F3C2AC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C73C6C9F247DA79000F3C2AC /* Coordinator.swift */,
+				C73C6CA1247DA7A200F3C2AC /* Coordinatable.swift */,
+				C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		C75B0409247DA3B4000EF5F2 = {
@@ -83,10 +92,8 @@
 		C75B0414247DA3B4000EF5F2 /* WorkoutLogger */ = {
 			isa = PBXGroup;
 			children = (
+				C73C6C9E247DA78000F3C2AC /* Coordinator */,
 				C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */,
-				C75B0417247DA3B4000EF5F2 /* SceneDelegate.swift */,
-				C75B0419247DA3B4000EF5F2 /* ViewController.swift */,
-				C75B041B247DA3B4000EF5F2 /* Main.storyboard */,
 				C75B0421247DA3B5000EF5F2 /* Assets.xcassets */,
 				C75B0423247DA3B5000EF5F2 /* LaunchScreen.storyboard */,
 				C75B0426247DA3B5000EF5F2 /* Info.plist */,
@@ -157,7 +164,6 @@
 			files = (
 				C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */,
 				C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */,
-				C75B041D247DA3B4000EF5F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,24 +216,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C75B041A247DA3B4000EF5F2 /* ViewController.swift in Sources */,
 				C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */,
+				C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */,
 				C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */,
-				C75B0418247DA3B4000EF5F2 /* SceneDelegate.swift in Sources */,
+				C73C6CA0247DA79000F3C2AC /* Coordinator.swift in Sources */,
+				C73C6CA4247DA7B700F3C2AC /* StoryboardInstantiatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C75B041B247DA3B4000EF5F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C75B041C247DA3B4000EF5F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C75B0423247DA3B5000EF5F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
