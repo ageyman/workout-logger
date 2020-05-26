@@ -1,2 +1,2 @@
-# Randomator Demo App
+# Workout Logger
 
