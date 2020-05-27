@@ -9,9 +9,10 @@
 import UIKit
 
 class TabBarCoordinator: Coordinator {
-    
-    private let window: UIWindow?
     private let rootViewController: UITabBarController
+    private let window: UIWindow?
+    private var tabCoordinators = [TabCoordinator]()
+    private var viewControllers = [UIViewController]()
     
     init(window: UIWindow?, rootViewController: UITabBarController) {
         self.window = window
@@ -22,6 +23,34 @@ class TabBarCoordinator: Coordinator {
     }
     
     override func start() {
+        setupChildCoordinators()
+        rootViewController.selectedIndex = 0
+    }
+    
+    private func setupChildCoordinators() {
         
+        func append(coordinator: TabCoordinator, viewController: UIViewController) {
+            tabCoordinators.append(coordinator)
+            viewControllers.append(viewController)
+        }
+        
+        // AddWorkout
+        let addWorkoutVC = AddWorkoutVC.instantiateFromStoryboard()
+        let addWorkoutCoordinator = AddWorkoutCoordinator(viewController: addWorkoutVC)
+        append(coordinator: addWorkoutCoordinator, viewController: addWorkoutVC)
+        
+        // Exercises
+        let exercisesVC = ExercisesVC.instantiateFromStoryboard()
+        let exercisesCoordinator = ExercisesCoordinator(viewController: exercisesVC)
+        append(coordinator: exercisesCoordinator, viewController: exercisesVC)
+        
+        // History
+        let historyVC = HistoryVC.instantiateFromStoryboard()
+        let historyCoordinator = HistoryCoordinator(viewController: historyVC)
+        append(coordinator: historyCoordinator, viewController: historyVC)
+        
+        addChildCoordinators(tabCoordinators)
+        childCoordinators.forEach { $0.start() }
+        rootViewController.viewControllers = viewControllers
     }
 }
