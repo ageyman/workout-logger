@@ -11,12 +11,19 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
+    var appCoordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupAppCoordinator()
         return true
+    }
+    
+    private func setupAppCoordinator() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appCoordinator = TabBarCoordinator(window: window, rootViewController: UITabBarController())
+        appCoordinator?.start()
     }
 
     // MARK: - Core Data stack

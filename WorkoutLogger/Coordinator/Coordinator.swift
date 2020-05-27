@@ -51,4 +51,3 @@ extension Coordinator: Equatable {
         return lhs === rhs
     }
 }
-

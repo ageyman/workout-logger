@@ -15,6 +15,7 @@
 		C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75B041E247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld */; };
 		C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75B0421247DA3B5000EF5F2 /* Assets.xcassets */; };
 		C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B0423247DA3B5000EF5F2 /* LaunchScreen.storyboard */; };
+		C791DE98247E3C2B007E223E /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DE97247E3C2B007E223E /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C75B0421247DA3B5000EF5F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C75B0424247DA3B5000EF5F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75B0426247DA3B5000EF5F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C791DE97247E3C2B007E223E /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				C73C6C9F247DA79000F3C2AC /* Coordinator.swift */,
 				C73C6CA1247DA7A200F3C2AC /* Coordinatable.swift */,
 				C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */,
+				C791DE97247E3C2B007E223E /* TabBarCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			files = (
 				C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */,
 				C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */,
+				C791DE98247E3C2B007E223E /* TabBarCoordinator.swift in Sources */,
 				C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */,
 				C73C6CA0247DA79000F3C2AC /* Coordinator.swift in Sources */,
 				C73C6CA4247DA7B700F3C2AC /* StoryboardInstantiatable.swift in Sources */,
