@@ -11,6 +11,7 @@
 		C73C6CA0247DA79000F3C2AC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C6C9F247DA79000F3C2AC /* Coordinator.swift */; };
 		C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C6CA1247DA7A200F3C2AC /* Coordinatable.swift */; };
 		C73C6CA4247DA7B700F3C2AC /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */; };
+		C7551884247E5D800048DE8F /* TabItemTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7551883247E5D800048DE8F /* TabItemTypeEnum.swift */; };
 		C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */; };
 		C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75B041E247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld */; };
 		C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75B0421247DA3B5000EF5F2 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		C73C6C9F247DA79000F3C2AC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C73C6CA1247DA7A200F3C2AC /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
+		C7551883247E5D800048DE8F /* TabItemTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemTypeEnum.swift; sourceTree = "<group>"; };
 		C75B0412247DA3B4000EF5F2 /* WorkoutLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C75B041F247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutLogger.xcdatamodel; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				C791DE9B247E438D007E223E /* ExercisesModule */,
 				C791DE9C247E4397007E223E /* HistoryModule */,
 				C791DE9D247E43AE007E223E /* Main.storyboard */,
+				C7551883247E5D800048DE8F /* TabItemTypeEnum.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				C791DEAE247E461D007E223E /* HistoryVC.swift in Sources */,
 				C791DE98247E3C2B007E223E /* TabBarCoordinator.swift in Sources */,
 				C791DEB2247E4631007E223E /* HistoryCoordinator.swift in Sources */,
+				C7551884247E5D800048DE8F /* TabItemTypeEnum.swift in Sources */,
 				C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */,
 				C73C6CA0247DA79000F3C2AC /* Coordinator.swift in Sources */,
 				C791DEB0247E4627007E223E /* HistoryVM.swift in Sources */,

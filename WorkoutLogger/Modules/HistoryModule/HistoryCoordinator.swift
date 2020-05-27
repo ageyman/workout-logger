@@ -10,11 +10,11 @@ import UIKit
 
 class HistoryCoordinator: TabCoordinator {
     override var index: Int {
-        return 2
+        return TabItemType.history.index
     }
     
     override func configureTabBarItem(for viewController: UIViewController) -> UITabBarItem {
-        let item = UITabBarItem(title: "History", image: nil, selectedImage: nil)
+        let item = UITabBarItem(title: TabItemType.history.title, image: nil, selectedImage: nil)
         return item
     }
 }

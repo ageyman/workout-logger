@@ -10,11 +10,11 @@ import UIKit
 
 class ExercisesCoordinator: TabCoordinator {
     override var index: Int {
-        return 1
+        return TabItemType.exercises.index
     }
     
     override func configureTabBarItem(for viewController: UIViewController) -> UITabBarItem {
-        let item = UITabBarItem(title: "Exercises", image: nil, selectedImage: nil)
+        let item = UITabBarItem(title: TabItemType.exercises.title, image: nil, selectedImage: nil)
         return item
     }
 }

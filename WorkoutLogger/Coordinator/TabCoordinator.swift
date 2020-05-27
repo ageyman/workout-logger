@@ -11,7 +11,7 @@ import UIKit
 class TabCoordinator: Coordinator {
     private let navigationController: UINavigationController
     var index: Int {
-        return 0
+        preconditionFailure("\(#function) should be overriden by subclass!")
     }
     
     private var tabBarItem: UITabBarItem {
