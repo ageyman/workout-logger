@@ -31,6 +31,8 @@
 		C791DEB7247E4B85007E223E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DEB6247E4B85007E223E /* BaseVC.swift */; };
 		C7F99EFA2480E4F30026933A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EF92480E4F30026933A /* DataSource.swift */; };
 		C7F99EFC2480E50B0026933A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EFB2480E50B0026933A /* Configurator.swift */; };
+		C7F99F002480F5D00026933A /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EFE2480F5D00026933A /* ExerciseTableViewCell.swift */; };
+		C7F99F012480F5D00026933A /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7F99EFF2480F5D00026933A /* ExerciseTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		C791DEB6247E4B85007E223E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		C7F99EF92480E4F30026933A /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		C7F99EFB2480E50B0026933A /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		C7F99EFE2480F5D00026933A /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		C7F99EFF2480F5D00026933A /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 		C791DE9A247E437B007E223E /* AddWorkoutModule */ = {
 			isa = PBXGroup;
 			children = (
+				C7F99EFD2480F5AD0026933A /* CustomViews */,
 				C791DEA1247E4597007E223E /* AddWorkoutVC.swift */,
 				C791DEA3247E45A2007E223E /* AddWorkoutVM.swift */,
 				C791DEA5247E45AE007E223E /* AddWorkoutCoordinator.swift */,
@@ -196,6 +201,15 @@
 				C7F99EFB2480E50B0026933A /* Configurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		C7F99EFD2480F5AD0026933A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				C7F99EFE2480F5D00026933A /* ExerciseTableViewCell.swift */,
+				C7F99EFF2480F5D00026933A /* ExerciseTableViewCell.xib */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C791DE9E247E43AE007E223E /* Main.storyboard in Resources */,
+				C7F99F012480F5D00026933A /* ExerciseTableViewCell.xib in Resources */,
 				C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */,
 				C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */,
 			);
@@ -316,6 +331,7 @@
 				C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */,
 				C791DEB7247E4B85007E223E /* BaseVC.swift in Sources */,
 				C791DEA0247E43CC007E223E /* TabCoordinator.swift in Sources */,
+				C7F99F002480F5D00026933A /* ExerciseTableViewCell.swift in Sources */,
 				C791DEA2247E4597007E223E /* AddWorkoutVC.swift in Sources */,
 				C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */,
 				C791DEA6247E45AE007E223E /* AddWorkoutCoordinator.swift in Sources */,

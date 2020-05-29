@@ -35,7 +35,7 @@ class TabBarCoordinator: Coordinator {
         }
         
         // AddWorkout
-        let addWorkoutVC = AddWorkoutVC.instantiateFromStoryboard()
+        let addWorkoutVC = AddWorkoutVC.create()
         let addWorkoutCoordinator = AddWorkoutCoordinator(viewController: addWorkoutVC)
         append(coordinator: addWorkoutCoordinator, viewController: addWorkoutVC)
         
