@@ -23,6 +23,9 @@ class AddWorkoutVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(with: viewModel)
+        let headerView = ExercisesHeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 60))
+        headerView.configure(with: ExercisesHeaderViewModel(workoutName: "Workout"))
+        tableView.tableHeaderView = headerView
     }
 }
 

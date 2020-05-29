@@ -41,6 +41,6 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     }
     
     func viewConfigurator(at index: Int, in section: Int) -> Configurator {
-        return ExerciseCellConfigurator(data: ExerciseDataModel())
+        return ExerciseCellConfigurator(data: ExerciseDataModel(name: "Name", sets: "Sets", reps: "Reps", weight: "Weight"))
     }
 }
