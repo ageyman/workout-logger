@@ -29,6 +29,8 @@
 		C791DEB0247E4627007E223E /* HistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DEAF247E4627007E223E /* HistoryVM.swift */; };
 		C791DEB2247E4631007E223E /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DEB1247E4631007E223E /* HistoryCoordinator.swift */; };
 		C791DEB7247E4B85007E223E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DEB6247E4B85007E223E /* BaseVC.swift */; };
+		C7F99EFA2480E4F30026933A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EF92480E4F30026933A /* DataSource.swift */; };
+		C7F99EFC2480E50B0026933A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EFB2480E50B0026933A /* Configurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		C791DEAF247E4627007E223E /* HistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVM.swift; sourceTree = "<group>"; };
 		C791DEB1247E4631007E223E /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
 		C791DEB6247E4B85007E223E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		C7F99EF92480E4F30026933A /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		C7F99EFB2480E50B0026933A /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 			children = (
 				C791DE99247E436F007E223E /* Modules */,
 				C73C6C9E247DA78000F3C2AC /* Coordinator */,
+				C7F99EF82480E4C70026933A /* Configurator */,
 				C791DEB3247E49FB007E223E /* Extensions */,
 				C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */,
 				C75B0421247DA3B5000EF5F2 /* Assets.xcassets */,
@@ -182,6 +187,15 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C7F99EF82480E4C70026933A /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				C7F99EF92480E4F30026933A /* DataSource.swift */,
+				C7F99EFB2480E50B0026933A /* Configurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +319,9 @@
 				C791DEA2247E4597007E223E /* AddWorkoutVC.swift in Sources */,
 				C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */,
 				C791DEA6247E45AE007E223E /* AddWorkoutCoordinator.swift in Sources */,
+				C7F99EFA2480E4F30026933A /* DataSource.swift in Sources */,
 				C791DEA8247E45C0007E223E /* ExercisesVC.swift in Sources */,
+				C7F99EFC2480E50B0026933A /* Configurator.swift in Sources */,
 				C791DEAA247E45F3007E223E /* ExercisesVM.swift in Sources */,
 				C791DEAE247E461D007E223E /* HistoryVC.swift in Sources */,
 				C791DE98247E3C2B007E223E /* TabBarCoordinator.swift in Sources */,
