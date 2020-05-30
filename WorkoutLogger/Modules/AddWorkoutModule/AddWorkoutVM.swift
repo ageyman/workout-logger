@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import TwoWayBondage
 
 class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     typealias ExerciseCellConfigurator = ViewConfigurator<ExerciseTableViewCell>
@@ -37,10 +38,15 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     }
     
     func numberOfCells(in section: Int) -> Int {
-        return 5
+        return 50
     }
     
     func viewConfigurator(at index: Int, in section: Int) -> Configurator {
-        return ExerciseCellConfigurator(data: ExerciseDataModel(name: "Name", sets: "Sets", reps: "Reps", weight: "Weight"))
+        let observedValue = Observable("Exercise \(index)")
+        observedValue.bind { value in
+            print(value)
+        }
+        
+        return ExerciseCellConfigurator(data: ExerciseDataModel(name: observedValue, sets: "Sets", reps: "Reps", weight: "Weight"))
     }
 }

@@ -30,6 +30,8 @@
 		C791DEB2247E4631007E223E /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DEB1247E4631007E223E /* HistoryCoordinator.swift */; };
 		C791DEB7247E4B85007E223E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DEB6247E4B85007E223E /* BaseVC.swift */; };
 		C7D7FFB224824F0A003D04F4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7FFB124824F0A003D04F4 /* BaseView.swift */; };
+		C7EAE31B24825473002AE5E7 /* WorkoutTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7EAE31A24825473002AE5E7 /* WorkoutTextFieldView.xib */; };
+		C7EAE31D24825494002AE5E7 /* WorkoutTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EAE31C24825494002AE5E7 /* WorkoutTextFieldView.swift */; };
 		C7F99EFA2480E4F30026933A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EF92480E4F30026933A /* DataSource.swift */; };
 		C7F99EFC2480E50B0026933A /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EFB2480E50B0026933A /* Configurator.swift */; };
 		C7F99F002480F5D00026933A /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EFE2480F5D00026933A /* ExerciseTableViewCell.swift */; };
@@ -64,6 +66,8 @@
 		C791DEB1247E4631007E223E /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
 		C791DEB6247E4B85007E223E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		C7D7FFB124824F0A003D04F4 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		C7EAE31A24825473002AE5E7 /* WorkoutTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutTextFieldView.xib; sourceTree = "<group>"; };
+		C7EAE31C24825494002AE5E7 /* WorkoutTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTextFieldView.swift; sourceTree = "<group>"; };
 		C7F99EF92480E4F30026933A /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		C7F99EFB2480E50B0026933A /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		C7F99EFE2480F5D00026933A /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 		C7D7FFB324825307003D04F4 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				C7EAE31C24825494002AE5E7 /* WorkoutTextFieldView.swift */,
+				C7EAE31A24825473002AE5E7 /* WorkoutTextFieldView.xib */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 				C791DE9E247E43AE007E223E /* Main.storyboard in Resources */,
 				C7F99F012480F5D00026933A /* ExerciseTableViewCell.xib in Resources */,
 				C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */,
+				C7EAE31B24825473002AE5E7 /* WorkoutTextFieldView.xib in Resources */,
 				C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +358,7 @@
 				C791DEB7247E4B85007E223E /* BaseVC.swift in Sources */,
 				C791DEA0247E43CC007E223E /* TabCoordinator.swift in Sources */,
 				C7F99F002480F5D00026933A /* ExerciseTableViewCell.swift in Sources */,
+				C7EAE31D24825494002AE5E7 /* WorkoutTextFieldView.swift in Sources */,
 				C791DEA2247E4597007E223E /* AddWorkoutVC.swift in Sources */,
 				C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */,
 				C791DEA6247E45AE007E223E /* AddWorkoutCoordinator.swift in Sources */,
