@@ -53,13 +53,35 @@ extension UITableView {
         cellNames.forEach {register(UINib(nibName: $0, bundle: nil), forCellReuseIdentifier: $0)}
     }
     
+    func register(headerFooterNames: String...) {
+        for headerFooterName in headerFooterNames {
+            register(UINib(nibName: headerFooterName, bundle: nil), forHeaderFooterViewReuseIdentifier: headerFooterName)
+        }
+    }
+    
+    func register(headerFooterNames: [String]) {
+        headerFooterNames.forEach {
+            register(UINib(nibName: $0, bundle: nil), forHeaderFooterViewReuseIdentifier: $0)
+        }
+    }
+    
     func register(with dataSource: DataSource){
         register(cellNames: dataSource.reuseIdentifiers)
+        register(headerFooterNames: dataSource.headerFooterReuseIdentifiers)
     }
     
     func configureCell(for configurator: Configurator, at indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(withIdentifier: configurator.reuseIdentifier, for: indexPath)
         configurator.configure(cell)
         return cell
+    }
+    
+    func configureHeaderFooter(for configurator: Configurator) -> UITableViewHeaderFooterView? {
+        guard let headerFooterView = dequeueReusableHeaderFooterView(withIdentifier: configurator.reuseIdentifier) else {
+            return nil
+        }
+        
+        configurator.configure(headerFooterView)
+        return headerFooterView
     }
 }
