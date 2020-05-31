@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AddWorkoutViewModelProtocol: DataSource {
+protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
     
     func addNewExercise()
     func saveWorkout()
@@ -17,7 +17,12 @@ protocol AddWorkoutViewModelProtocol: DataSource {
 }
 
 class AddWorkoutVC: BaseVC {
-    private var viewModel: AddWorkoutViewModelProtocol!
+    private var viewModel: AddWorkoutViewModelProtocol! {
+        didSet {
+            viewModel.start()
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,6 +50,11 @@ extension AddWorkoutVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let configurator =  viewModel.viewConfigurator(at: indexPath.row, in: indexPath.section)
         return tableView.configureCell(for: configurator, at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let configuartor = viewModel.headerViewConfigurator(in: section) else { return nil}
+        return tableView.configureHeaderFooter(for: configuartor)
     }
 }
 

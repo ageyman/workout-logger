@@ -11,6 +11,18 @@ import TwoWayBondage
 
 class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     typealias ExerciseCellConfigurator = ViewConfigurator<ExerciseTableViewCell>
+    typealias ExerciseSectionViewConfigurator = ViewConfigurator<ExerciseSectionHeaderView>
+    
+    private var exercisesArray: [ExerciseDataModel]!
+    
+    func start() {
+        let name = Observable("Exercise Name")
+        name.bind { value in
+            print(value)
+        }
+        let exercise = ExerciseDataModel(name: name, sets: "1", reps: "0", weight: "0")
+        exercisesArray = [exercise]
+    }
     
     func addNewExercise() {
         
@@ -33,12 +45,16 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         return ["\(ExerciseTableViewCell.self)"]
     }
     
+    var headerFooterReuseIdentifiers: [String] {
+        return ["\(ExerciseSectionHeaderView.self)"]
+    }
+    
     var sectionsNumber: Int {
-        return 1
+        return exercisesArray.count
     }
     
     func numberOfCells(in section: Int) -> Int {
-        return 50
+        return exercisesArray.count
     }
     
     func viewConfigurator(at index: Int, in section: Int) -> Configurator {
@@ -48,5 +64,9 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         }
         
         return ExerciseCellConfigurator(data: ExerciseDataModel(name: observedValue, sets: "Sets", reps: "Reps", weight: "Weight"))
+    }
+    
+    func headerViewConfigurator(in section: Int) -> Configurator? {
+        return ExerciseSectionViewConfigurator(data: WorkoutTextFieldModel(value: exercisesArray[section].name))
     }
 }
