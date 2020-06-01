@@ -18,10 +18,10 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     private var exercisesArray: [ExerciseModel]!
     
     func start() {
-        let name = Observable("Exercise Name")
-        let sets = Observable("1")
-        let reps = Observable("0")
-        let weight = Observable("0")
+        let name = Observable("")
+        let sets = Observable("")
+        let reps = Observable("")
+        let weight = Observable("")
         let exerciseValues = ExerciseValuesModel(sets: sets, reps: reps, weight: weight)
         let exercise = ExerciseModel(name: name, values: [exerciseValues])
         exercisesArray = [exercise]
@@ -44,9 +44,9 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     }
     
     private func addNewSet(in section: Int) {
-        let sets = Observable("1")
-        let reps = Observable("0")
-        let weight = Observable("0")
+        let sets = Observable("")
+        let reps = Observable("")
+        let weight = Observable("")
         let exerciseValues = ExerciseValuesModel(sets: sets, reps: reps, weight: weight)
         exercisesArray[section].values.append(exerciseValues)
         reloadDataIn.value = (nil, section)
