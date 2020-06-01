@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import TwoWayBondage
 
 protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
+    var reloadDataIn: Observable<(index: Int?, section: Int?)> { get }
     
     func addNewExercise()
     func saveWorkout()
@@ -28,6 +30,15 @@ class AddWorkoutVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(with: viewModel)
+        setupBindings(for: viewModel)
+    }
+    
+    private func setupBindings(for viewModel: AddWorkoutViewModelProtocol) {
+        viewModel.reloadDataIn.bind { [weak self] value in
+            guard let strongSelf = self, let section = value.section else { return }
+            
+            strongSelf.tableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        }
     }
 }
 
@@ -43,6 +54,11 @@ extension AddWorkoutVC {
 
 // MARK: UITableViewDataSource
 extension AddWorkoutVC: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sectionsNumber
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCells(in: section)
     }
@@ -53,7 +69,12 @@ extension AddWorkoutVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let configuartor = viewModel.headerViewConfigurator(in: section) else { return nil}
+        guard let configuartor = viewModel.headerViewConfigurator(in: section) else { return nil }
+        return tableView.configureHeaderFooter(for: configuartor)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard let configuartor = viewModel.footerViewConfigurator(in: section) else { return nil }
         return tableView.configureHeaderFooter(for: configuartor)
     }
 }

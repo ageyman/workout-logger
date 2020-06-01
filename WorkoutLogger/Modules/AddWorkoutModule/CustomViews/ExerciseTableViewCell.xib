@@ -16,50 +16,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="512" height="39"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMZ-9c-J40" customClass="WorkoutTextFieldView" customModule="WorkoutLogger" customModuleProvider="target">
-                        <rect key="frame" x="2" y="2" width="256" height="35"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9on-nk-1E9">
-                        <rect key="frame" x="263" y="2" width="247" height="35"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="N1e-PM-LA4">
+                        <rect key="frame" x="164" y="2" width="343" height="35"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-aR-wqJ">
-                                <rect key="frame" x="0.0" y="0.0" width="81" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Gv-SJ-4bH">
-                                <rect key="frame" x="83" y="0.0" width="81" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-bU-2v4">
-                                <rect key="frame" x="166" y="0.0" width="81" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="re2-tC-byJ" customClass="WorkoutTextFieldView" customModule="WorkoutLogger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="113" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thA-kC-GFa" customClass="WorkoutTextFieldView" customModule="WorkoutLogger" customModuleProvider="target">
+                                <rect key="frame" x="115" y="0.0" width="113" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y94-vN-rgB" customClass="WorkoutTextFieldView" customModule="WorkoutLogger" customModuleProvider="target">
+                                <rect key="frame" x="230" y="0.0" width="113" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                     </stackView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="hMZ-9c-J40" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="5Pd-Hj-KLZ"/>
-                    <constraint firstItem="hMZ-9c-J40" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="C9E-Cj-f4A"/>
-                    <constraint firstItem="9on-nk-1E9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="KLI-mo-A9H"/>
-                    <constraint firstAttribute="bottom" secondItem="hMZ-9c-J40" secondAttribute="bottom" constant="2" id="M74-hf-lio"/>
-                    <constraint firstAttribute="trailing" secondItem="9on-nk-1E9" secondAttribute="trailing" constant="2" id="PVp-eV-irr"/>
-                    <constraint firstItem="9on-nk-1E9" firstAttribute="leading" secondItem="hMZ-9c-J40" secondAttribute="trailing" constant="5" id="dcP-xS-PPT"/>
-                    <constraint firstAttribute="bottom" secondItem="9on-nk-1E9" secondAttribute="bottom" constant="2" id="swU-2Y-eqP"/>
-                    <constraint firstItem="hMZ-9c-J40" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="vEg-vz-KiV"/>
+                    <constraint firstAttribute="trailing" secondItem="N1e-PM-LA4" secondAttribute="trailing" constant="5" id="AON-gQ-jWz"/>
+                    <constraint firstItem="N1e-PM-LA4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="D49-2c-1ul"/>
+                    <constraint firstAttribute="bottom" secondItem="N1e-PM-LA4" secondAttribute="bottom" constant="2" id="IsD-vU-Lv7"/>
+                    <constraint firstItem="N1e-PM-LA4" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.67" id="YSk-ic-5ac"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="exerciseNameTextField" destination="hMZ-9c-J40" id="vkR-lp-L08"/>
-                <outlet property="repsNumberTextField" destination="2Gv-SJ-4bH" id="CF3-BD-Jrg"/>
-                <outlet property="setsNumberTextField" destination="kvT-aR-wqJ" id="lWV-hn-kPA"/>
-                <outlet property="weightValueTextField" destination="Zfq-bU-2v4" id="zzm-Cy-qbT"/>
+                <outlet property="repsNumberView" destination="thA-kC-GFa" id="cuM-WO-Krd"/>
+                <outlet property="setsNumberView" destination="re2-tC-byJ" id="bGS-iA-vtn"/>
+                <outlet property="weightNumberView" destination="y94-vN-rgB" id="fSW-C6-9Ea"/>
             </connections>
             <point key="canvasLocation" x="-130" y="22"/>
         </tableViewCell>

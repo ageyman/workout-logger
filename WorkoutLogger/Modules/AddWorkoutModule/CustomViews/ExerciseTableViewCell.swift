@@ -10,22 +10,13 @@ import UIKit
 import TwoWayBondage
 
 class ExerciseTableViewCell: UITableViewCell, Configurable {
-    @IBOutlet weak var setsNumberTextField: UITextField!
-    @IBOutlet weak var repsNumberTextField: UITextField!
-    @IBOutlet weak var weightValueTextField: UITextField!
-    @IBOutlet weak var exerciseNameTextField: WorkoutTextFieldView!
+    @IBOutlet weak var setsNumberView: WorkoutTextFieldView!
+    @IBOutlet weak var repsNumberView: WorkoutTextFieldView!
+    @IBOutlet weak var weightNumberView: WorkoutTextFieldView!
     
-    func configure(with data: ExerciseDataModel) {
-        exerciseNameTextField.configure(with: WorkoutTextFieldModel(value: data.name))
-        setsNumberTextField.text = data.sets
-        repsNumberTextField.text = data.reps
-        repsNumberTextField.text = data.weight
+    func configure(with data: ExerciseValuesModel) {
+        setsNumberView.configure(with: WorkoutTextFieldModel(value: data.sets))
+        repsNumberView.configure(with: WorkoutTextFieldModel(value: data.reps))
+        weightNumberView.configure(with: WorkoutTextFieldModel(value: data.weight))
     }
-}
-
-struct ExerciseDataModel {
-    let name: Observable<String>
-    let sets: String
-    let reps: String
-    let weight: String
 }

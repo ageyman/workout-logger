@@ -11,16 +11,19 @@ import TwoWayBondage
 
 class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     typealias ExerciseCellConfigurator = ViewConfigurator<ExerciseTableViewCell>
-    typealias ExerciseSectionViewConfigurator = ViewConfigurator<ExerciseSectionHeaderView>
+    typealias ExerciseSectionHeaderViewConfigurator = ViewConfigurator<ExerciseSectionHeaderView>
+    typealias ExerciseSectionFooterViewConfigurator = ViewConfigurator<ExerciseSectionFooterView>
     
-    private var exercisesArray: [ExerciseDataModel]!
+    var reloadDataIn = Observable<(index: Int?, section: Int?)>(nil)
+    private var exercisesArray: [ExerciseModel]!
     
     func start() {
         let name = Observable("Exercise Name")
-        name.bind { value in
-            print(value)
-        }
-        let exercise = ExerciseDataModel(name: name, sets: "1", reps: "0", weight: "0")
+        let sets = Observable("1")
+        let reps = Observable("0")
+        let weight = Observable("0")
+        let exerciseValues = ExerciseValuesModel(sets: sets, reps: reps, weight: weight)
+        let exercise = ExerciseModel(name: name, values: [exerciseValues])
         exercisesArray = [exercise]
     }
     
@@ -40,13 +43,23 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         
     }
     
+    private func addNewSet(in section: Int) {
+        let sets = Observable("1")
+        let reps = Observable("0")
+        let weight = Observable("0")
+        let exerciseValues = ExerciseValuesModel(sets: sets, reps: reps, weight: weight)
+        exercisesArray[section].values.append(exerciseValues)
+        reloadDataIn.value = (nil, section)
+    }
+    
     // MARK: DataSource
     var reuseIdentifiers: [String] {
         return ["\(ExerciseTableViewCell.self)"]
     }
     
     var headerFooterReuseIdentifiers: [String] {
-        return ["\(ExerciseSectionHeaderView.self)"]
+        return ["\(ExerciseSectionHeaderView.self)",
+            "\(ExerciseSectionFooterView.self)"]
     }
     
     var sectionsNumber: Int {
@@ -54,19 +67,22 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     }
     
     func numberOfCells(in section: Int) -> Int {
-        return exercisesArray.count
+        return exercisesArray[section].values.count
     }
     
     func viewConfigurator(at index: Int, in section: Int) -> Configurator {
-        let observedValue = Observable("Exercise \(index)")
-        observedValue.bind { value in
-            print(value)
-        }
-        
-        return ExerciseCellConfigurator(data: ExerciseDataModel(name: observedValue, sets: "Sets", reps: "Reps", weight: "Weight"))
+        return ExerciseCellConfigurator(data: exercisesArray[section].values[index])
     }
     
     func headerViewConfigurator(in section: Int) -> Configurator? {
-        return ExerciseSectionViewConfigurator(data: WorkoutTextFieldModel(value: exercisesArray[section].name))
+        return ExerciseSectionHeaderViewConfigurator(data: WorkoutTextFieldModel(value: exercisesArray[section].name))
+    }
+    
+    func footerViewConfigurator(in section: Int) -> Configurator? {
+        let addNewSetAction: () -> () = { [weak self] in
+            self?.addNewSet(in: section)
+        }
+        
+        return ExerciseSectionFooterViewConfigurator(data: ExerciseSectionFooterViewModel(action: addNewSetAction))
     }
 }

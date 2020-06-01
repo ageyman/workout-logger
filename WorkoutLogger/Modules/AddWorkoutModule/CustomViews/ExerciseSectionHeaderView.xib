@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GiB-Zt-bRx" customClass="WorkoutTextFieldView" customModule="WorkoutLogger" customModuleProvider="target">
-                    <rect key="frame" x="2" y="46" width="909" height="241"/>
+                    <rect key="frame" x="2" y="46" width="611.5" height="241"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
             </subviews>
@@ -22,7 +22,7 @@
             <constraints>
                 <constraint firstItem="GiB-Zt-bRx" firstAttribute="top" secondItem="Oji-du-UlJ" secondAttribute="top" constant="2" id="CLZ-pR-gX4"/>
                 <constraint firstItem="Oji-du-UlJ" firstAttribute="bottom" secondItem="GiB-Zt-bRx" secondAttribute="bottom" constant="2" id="JyE-sD-zti"/>
-                <constraint firstItem="Oji-du-UlJ" firstAttribute="trailing" secondItem="GiB-Zt-bRx" secondAttribute="trailing" constant="2" id="dGH-Ua-tT0"/>
+                <constraint firstItem="GiB-Zt-bRx" firstAttribute="width" secondItem="BvQ-NS-QF5" secondAttribute="width" multiplier="0.67" id="fLr-C9-ytq"/>
                 <constraint firstItem="GiB-Zt-bRx" firstAttribute="leading" secondItem="Oji-du-UlJ" secondAttribute="leading" constant="2" id="ryW-st-GlF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
