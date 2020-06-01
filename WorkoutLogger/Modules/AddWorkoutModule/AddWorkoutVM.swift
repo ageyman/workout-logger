@@ -14,21 +14,12 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     typealias ExerciseSectionHeaderViewConfigurator = ViewConfigurator<ExerciseSectionHeaderView>
     typealias ExerciseSectionFooterViewConfigurator = ViewConfigurator<ExerciseSectionFooterView>
     
+    var shouldReloadData = Observable<Bool>(false)
     var reloadDataIn = Observable<(index: Int?, section: Int?)>(nil)
-    private var exercisesArray: [ExerciseModel]!
+    private var exercisesArray = [ExerciseModel]()
     
     func start() {
-        let name = Observable("")
-        let sets = Observable("")
-        let reps = Observable("")
-        let weight = Observable("")
-        let exerciseValues = ExerciseValuesModel(sets: sets, reps: reps, weight: weight)
-        let exercise = ExerciseModel(name: name, values: [exerciseValues])
-        exercisesArray = [exercise]
-    }
-    
-    func addNewExercise() {
-        
+       addNewExercise()
     }
     
     func saveWorkout() {
@@ -43,13 +34,37 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         
     }
     
+    func configureFooterView(for tableView: UITableView) {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
+        button.addTarget(self, action: #selector(didTapOnAddNewExerciseButton), for: .touchUpInside)
+        button.setTitle(" + Add New Exercise", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        tableView.tableFooterView = button
+    }
+    
+    @objc private func didTapOnAddNewExerciseButton() {
+        addNewExercise()
+    }
+    
     private func addNewSet(in section: Int) {
+        let exerciseValues = configureNewSetValues()
+        exercisesArray[section].values.append(exerciseValues)
+        reloadDataIn.value = (nil, section)
+    }
+    
+    private func addNewExercise() {
+        let name = Observable("")
+        let exerciseValues = configureNewSetValues()
+        let exercise = ExerciseModel(name: name, values: [exerciseValues])
+        exercisesArray.append(exercise)
+        shouldReloadData.value = true
+    }
+    
+    private func configureNewSetValues() -> ExerciseValuesModel {
         let sets = Observable("")
         let reps = Observable("")
         let weight = Observable("")
-        let exerciseValues = ExerciseValuesModel(sets: sets, reps: reps, weight: weight)
-        exercisesArray[section].values.append(exerciseValues)
-        reloadDataIn.value = (nil, section)
+        return ExerciseValuesModel(sets: sets, reps: reps, weight: weight)
     }
     
     // MARK: DataSource
