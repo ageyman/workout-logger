@@ -14,6 +14,5 @@ class ExerciseSectionHeaderView: UITableViewHeaderFooterView, Configurable {
     
     func configure(with data: WorkoutTextFieldModel) {
         exerciseNameView.configure(with: data)
-        exerciseNameView.valueTextField.placeholder = "Exercise Name"
     }
 }

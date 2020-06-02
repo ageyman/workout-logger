@@ -90,7 +90,7 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     }
     
     func headerViewConfigurator(in section: Int) -> Configurator? {
-        return ExerciseSectionHeaderViewConfigurator(data: WorkoutTextFieldModel(value: exercisesArray[section].name))
+        return ExerciseSectionHeaderViewConfigurator(data: WorkoutTextFieldModel(value: exercisesArray[section].name, placeholderText: "Exercise Name"))
     }
     
     func footerViewConfigurator(in section: Int) -> Configurator? {

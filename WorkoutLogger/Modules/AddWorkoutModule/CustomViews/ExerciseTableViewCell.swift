@@ -15,8 +15,8 @@ class ExerciseTableViewCell: UITableViewCell, Configurable {
     @IBOutlet private weak var weightNumberView: WorkoutTextFieldView!
     
     func configure(with data: ExerciseValuesModel) {
-        setsNumberView.configure(with: WorkoutTextFieldModel(value: data.sets))
-        repsNumberView.configure(with: WorkoutTextFieldModel(value: data.reps))
-        weightNumberView.configure(with: WorkoutTextFieldModel(value: data.weight))
+        setsNumberView.configure(with: WorkoutTextFieldModel(value: data.sets, placeholderText: "sets"))
+        repsNumberView.configure(with: WorkoutTextFieldModel(value: data.reps, placeholderText: "reps"))
+        weightNumberView.configure(with: WorkoutTextFieldModel(value: data.weight, placeholderText: "kg"))
     }
 }

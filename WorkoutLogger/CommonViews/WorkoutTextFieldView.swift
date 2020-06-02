@@ -17,6 +17,7 @@ class WorkoutTextFieldView: BaseView, Configurable {
     func configure(with data: WorkoutTextFieldModel) {
         self.data = data
         valueTextField.text = data.value.value
+        valueTextField.placeholder = data.placeholderText
         valueTextField.addTarget(self, action: #selector(textFieldDidChangeValue(_:)), for: .editingChanged)
     }
     
@@ -25,10 +26,7 @@ class WorkoutTextFieldView: BaseView, Configurable {
     }
 }
 
-class WorkoutTextFieldModel {
+struct WorkoutTextFieldModel {
     let value: Observable<String>
-    
-    init(value: Observable<String>) {
-        self.value = value
-    }
+    var placeholderText: String?
 }
