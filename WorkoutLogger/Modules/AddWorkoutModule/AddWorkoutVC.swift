@@ -26,13 +26,17 @@ class AddWorkoutVC: BaseVC {
         }
     }
     
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.register(with: viewModel)
+            viewModel.configureFooterView(for: tableView)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(with: viewModel)
-        viewModel.configureFooterView(for: tableView)
         setupBindings(for: viewModel)
+        registerForKeyboardNotifications()
     }
     
     private func setupBindings(for viewModel: AddWorkoutViewModelProtocol) {
@@ -100,5 +104,21 @@ extension AddWorkoutVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 30
+    }
+}
+
+// MARK: KeyboardОbserversHandler
+extension AddWorkoutVC: KeyboardОbserversHandler {
+    
+    func keyboardWillShowAction(notification: NSNotification) {
+        if let keyBoardSize = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect {
+            tableView.contentInset.bottom = keyBoardSize.height
+            tableView.verticalScrollIndicatorInsets.bottom = 0
+        }
+    }
+    
+    func keyboardWillHideAction() {
+        tableView.contentInset.bottom = 0
+        tableView.verticalScrollIndicatorInsets.bottom = 0
     }
 }
