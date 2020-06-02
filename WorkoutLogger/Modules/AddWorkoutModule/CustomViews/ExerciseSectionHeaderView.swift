@@ -10,7 +10,8 @@ import UIKit
 
 class ExerciseSectionHeaderView: UITableViewHeaderFooterView, Configurable {
     
-    @IBOutlet weak var exerciseNameView: WorkoutTextFieldView!
+    @IBOutlet private weak var exerciseNameView: WorkoutTextFieldView!
+    
     func configure(with data: WorkoutTextFieldModel) {
         exerciseNameView.configure(with: data)
         exerciseNameView.valueTextField.placeholder = "Exercise Name"

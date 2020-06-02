@@ -10,9 +10,9 @@ import UIKit
 import TwoWayBondage
 
 class ExerciseTableViewCell: UITableViewCell, Configurable {
-    @IBOutlet weak var setsNumberView: WorkoutTextFieldView!
-    @IBOutlet weak var repsNumberView: WorkoutTextFieldView!
-    @IBOutlet weak var weightNumberView: WorkoutTextFieldView!
+    @IBOutlet private weak var setsNumberView: WorkoutTextFieldView!
+    @IBOutlet private weak var repsNumberView: WorkoutTextFieldView!
+    @IBOutlet private weak var weightNumberView: WorkoutTextFieldView!
     
     func configure(with data: ExerciseValuesModel) {
         setsNumberView.configure(with: WorkoutTextFieldModel(value: data.sets))

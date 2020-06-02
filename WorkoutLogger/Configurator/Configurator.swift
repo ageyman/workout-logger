@@ -23,6 +23,10 @@ protocol Configurator {
 
 class ViewConfigurator<T: Configurable>: Configurator {
     var reuseIdentifier: String {
+        return Self.reuseIdentifier
+    }
+    
+    class var reuseIdentifier: String {
         return "\(T.self)"
     }
     

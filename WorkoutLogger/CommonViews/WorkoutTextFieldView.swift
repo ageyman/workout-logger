@@ -11,8 +11,8 @@ import TwoWayBondage
 
 class WorkoutTextFieldView: BaseView, Configurable {
     
-    @IBOutlet weak var valueTextField: UITextField!
-    var data: WorkoutTextFieldModel!
+    @IBOutlet private weak var valueTextField: UITextField!
+    private var data: WorkoutTextFieldModel!
     
     func configure(with data: WorkoutTextFieldModel) {
         self.data = data

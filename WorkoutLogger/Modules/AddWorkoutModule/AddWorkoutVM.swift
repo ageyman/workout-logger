@@ -69,12 +69,12 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     
     // MARK: DataSource
     var reuseIdentifiers: [String] {
-        return ["\(ExerciseTableViewCell.self)"]
+        return [ExerciseCellConfigurator.reuseIdentifier]
     }
     
     var headerFooterReuseIdentifiers: [String] {
-        return ["\(ExerciseSectionHeaderView.self)",
-            "\(ExerciseSectionFooterView.self)"]
+        return [ExerciseSectionHeaderViewConfigurator.reuseIdentifier,
+                ExerciseSectionFooterViewConfigurator.reuseIdentifier]
     }
     
     var sectionsNumber: Int {
@@ -98,6 +98,6 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
             self?.addNewSet(in: section)
         }
         
-        return ExerciseSectionFooterViewConfigurator(data: ExerciseSectionFooterViewModel(action: addNewSetAction))
+        return ExerciseSectionFooterViewConfigurator(data: ExerciseSectionFooterModel(action: addNewSetAction))
     }
 }

@@ -8,17 +8,17 @@
 import UIKit
 
 class ExerciseSectionFooterView: UITableViewHeaderFooterView, Configurable {
-    var data: ExerciseSectionFooterViewModel!
+    private var data: ExerciseSectionFooterModel!
     
-    func configure(with data: ExerciseSectionFooterViewModel) {
+    func configure(with data: ExerciseSectionFooterModel) {
         self.data = data
     }
     
-    @IBAction func didTapOnAddNewSetButton(_ sender: Any) {
+    @IBAction private func didTapOnAddNewSetButton(_ sender: Any) {
         data.action()
     }
 }
 
-struct ExerciseSectionFooterViewModel {
+struct ExerciseSectionFooterModel {
     let action: () -> ()
 }
