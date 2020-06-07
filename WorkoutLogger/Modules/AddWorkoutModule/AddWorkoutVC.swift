@@ -12,6 +12,7 @@ import TwoWayBondage
 protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
     var reloadDataIn: Observable<(index: Int?, section: Int?)> { get }
     var shouldReloadData: Observable<Bool> { get }
+    var workoutDurationViewModel: WorkoutDurationViewModelProtocol { get }
     
     func configureFooterView(for tableView: UITableView)
     func saveWorkout()
@@ -23,6 +24,7 @@ class AddWorkoutVC: BaseVC {
     private var viewModel: AddWorkoutViewModelProtocol! {
         didSet {
             viewModel.start()
+            setupBindings(for: viewModel)
         }
     }
     
@@ -33,10 +35,17 @@ class AddWorkoutVC: BaseVC {
         }
     }
     
+    @IBOutlet weak var workoutDurationView: WorkoutDurationView! {
+        didSet {
+            workoutDurationView.viewModel = viewModel.workoutDurationViewModel
+            workoutDurationView.isHidden = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBindings(for: viewModel)
         registerForKeyboardNotifications()
+        setupButtons(for: navigationItem)
     }
     
     private func setupBindings(for viewModel: AddWorkoutViewModelProtocol) {
@@ -52,6 +61,19 @@ class AddWorkoutVC: BaseVC {
             }
         }
     }
+    
+    private func setupButtons(for navigationItem: UINavigationItem) {
+        let durationButton = UIBarButtonItem(image: UIImage(systemName: "clock"),
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(didTapOnSetWorkoutDurationButton))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        navigationItem.setLeftBarButtonItems([spacer, spacer, durationButton], animated: true)
+    }
+    
+    @objc private func didTapOnSetWorkoutDurationButton() {
+        workoutDurationView.isHidden = workoutDurationView.isHidden ? false : true
+    }
 }
 
 // MARK: Scene Factory
@@ -59,7 +81,7 @@ extension AddWorkoutVC {
     
     static func create() -> UIViewController {
         let viewController = Self.instantiateFromStoryboard()
-        viewController.viewModel = AddWorkoutViewModel()
+        viewController.viewModel = AddWorkoutViewModel(workoutDurationViewModel: WorkoutDurationViewModel())
         return viewController
     }
 }

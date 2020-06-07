@@ -36,6 +36,11 @@
 		C7D7FFB224824F0A003D04F4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D7FFB124824F0A003D04F4 /* BaseView.swift */; };
 		C7DBE4DA248401500075E997 /* ExerciseSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DBE4D9248401500075E997 /* ExerciseSectionHeaderView.swift */; };
 		C7DBE4DE248409B80075E997 /* ExerciseSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7DBE4DD248409B80075E997 /* ExerciseSectionHeaderView.xib */; };
+		C7E9DBCA248D696D001BD2AD /* WorkoutDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E9DBC9248D696D001BD2AD /* WorkoutDurationView.swift */; };
+		C7E9DBCC248D6985001BD2AD /* WorkoutDurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E9DBCB248D6985001BD2AD /* WorkoutDurationView.xib */; };
+		C7E9DBCE248D6D21001BD2AD /* WorkoutDurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E9DBCD248D6D21001BD2AD /* WorkoutDurationViewModel.swift */; };
+		C7E9DBD1248D6FAF001BD2AD /* WorkoutDurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E9DBCF248D6FAF001BD2AD /* WorkoutDurationTableViewCell.swift */; };
+		C7E9DBD2248D6FAF001BD2AD /* WorkoutDurationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E9DBD0248D6FAF001BD2AD /* WorkoutDurationTableViewCell.xib */; };
 		C7EAE31B24825473002AE5E7 /* WorkoutTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7EAE31A24825473002AE5E7 /* WorkoutTextFieldView.xib */; };
 		C7EAE31D24825494002AE5E7 /* WorkoutTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EAE31C24825494002AE5E7 /* WorkoutTextFieldView.swift */; };
 		C7F99EFA2480E4F30026933A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F99EF92480E4F30026933A /* DataSource.swift */; };
@@ -78,6 +83,11 @@
 		C7D7FFB124824F0A003D04F4 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C7DBE4D9248401500075E997 /* ExerciseSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSectionHeaderView.swift; sourceTree = "<group>"; };
 		C7DBE4DD248409B80075E997 /* ExerciseSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseSectionHeaderView.xib; sourceTree = "<group>"; };
+		C7E9DBC9248D696D001BD2AD /* WorkoutDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDurationView.swift; sourceTree = "<group>"; };
+		C7E9DBCB248D6985001BD2AD /* WorkoutDurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutDurationView.xib; sourceTree = "<group>"; };
+		C7E9DBCD248D6D21001BD2AD /* WorkoutDurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDurationViewModel.swift; sourceTree = "<group>"; };
+		C7E9DBCF248D6FAF001BD2AD /* WorkoutDurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDurationTableViewCell.swift; sourceTree = "<group>"; };
+		C7E9DBD0248D6FAF001BD2AD /* WorkoutDurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutDurationTableViewCell.xib; sourceTree = "<group>"; };
 		C7EAE31A24825473002AE5E7 /* WorkoutTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutTextFieldView.xib; sourceTree = "<group>"; };
 		C7EAE31C24825494002AE5E7 /* WorkoutTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTextFieldView.swift; sourceTree = "<group>"; };
 		C7F99EF92480E4F30026933A /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -249,6 +259,18 @@
 			path = CommonViews;
 			sourceTree = "<group>";
 		};
+		C7E9DBC8248D692D001BD2AD /* WorkoutDurationView */ = {
+			isa = PBXGroup;
+			children = (
+				C7E9DBC9248D696D001BD2AD /* WorkoutDurationView.swift */,
+				C7E9DBCB248D6985001BD2AD /* WorkoutDurationView.xib */,
+				C7E9DBCD248D6D21001BD2AD /* WorkoutDurationViewModel.swift */,
+				C7E9DBCF248D6FAF001BD2AD /* WorkoutDurationTableViewCell.swift */,
+				C7E9DBD0248D6FAF001BD2AD /* WorkoutDurationTableViewCell.xib */,
+			);
+			path = WorkoutDurationView;
+			sourceTree = "<group>";
+		};
 		C7F99EF82480E4C70026933A /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +283,7 @@
 		C7F99EFD2480F5AD0026933A /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				C7E9DBC8248D692D001BD2AD /* WorkoutDurationView */,
 				C7F99EFE2480F5D00026933A /* ExerciseTableViewCell.swift */,
 				C7F99EFF2480F5D00026933A /* ExerciseTableViewCell.xib */,
 				C7DBE4D9248401500075E997 /* ExerciseSectionHeaderView.swift */,
@@ -335,7 +358,9 @@
 				C7F99F012480F5D00026933A /* ExerciseTableViewCell.xib in Resources */,
 				C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */,
 				C7EAE31B24825473002AE5E7 /* WorkoutTextFieldView.xib in Resources */,
+				C7E9DBCC248D6985001BD2AD /* WorkoutDurationView.xib in Resources */,
 				C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */,
+				C7E9DBD2248D6FAF001BD2AD /* WorkoutDurationTableViewCell.xib in Resources */,
 				C70C588F2484E15B00133761 /* ExerciseSectionFooterView.xib in Resources */,
 				C7DBE4DE248409B80075E997 /* ExerciseSectionHeaderView.xib in Resources */,
 			);
@@ -401,8 +426,10 @@
 				C73C6CA2247DA7A200F3C2AC /* Coordinatable.swift in Sources */,
 				C791DEA6247E45AE007E223E /* AddWorkoutCoordinator.swift in Sources */,
 				C7F99EFA2480E4F30026933A /* DataSource.swift in Sources */,
+				C7E9DBD1248D6FAF001BD2AD /* WorkoutDurationTableViewCell.swift in Sources */,
 				C791DEA8247E45C0007E223E /* ExercisesVC.swift in Sources */,
 				C7D7FFB224824F0A003D04F4 /* BaseView.swift in Sources */,
+				C7E9DBCE248D6D21001BD2AD /* WorkoutDurationViewModel.swift in Sources */,
 				C7F99EFC2480E50B0026933A /* Configurator.swift in Sources */,
 				C791DEAA247E45F3007E223E /* ExercisesVM.swift in Sources */,
 				C791DEAE247E461D007E223E /* HistoryVC.swift in Sources */,
@@ -410,6 +437,7 @@
 				C791DEB2247E4631007E223E /* HistoryCoordinator.swift in Sources */,
 				C7551884247E5D800048DE8F /* TabItemTypeEnum.swift in Sources */,
 				C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */,
+				C7E9DBCA248D696D001BD2AD /* WorkoutDurationView.swift in Sources */,
 				C73C6CA0247DA79000F3C2AC /* Coordinator.swift in Sources */,
 				C7DBE4DA248401500075E997 /* ExerciseSectionHeaderView.swift in Sources */,
 				C791DEB0247E4627007E223E /* HistoryVM.swift in Sources */,

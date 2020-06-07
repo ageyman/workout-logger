@@ -14,12 +14,17 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     typealias ExerciseSectionHeaderViewConfigurator = ViewConfigurator<ExerciseSectionHeaderView>
     typealias ExerciseSectionFooterViewConfigurator = ViewConfigurator<ExerciseSectionFooterView>
     
+    var workoutDurationViewModel: WorkoutDurationViewModelProtocol
     var shouldReloadData = Observable<Bool>(false)
     var reloadDataIn = Observable<(index: Int?, section: Int?)>(nil)
     private var exercisesArray = [ExerciseModel]()
     
+    init(workoutDurationViewModel: WorkoutDurationViewModelProtocol) {
+        self.workoutDurationViewModel = workoutDurationViewModel
+    }
+    
     func start() {
-       addNewExercise()
+        addNewExercise()
     }
     
     func saveWorkout() {
