@@ -10,12 +10,16 @@ import UIKit
 
 class TabCoordinator: Coordinator {
     private let navigationController: UINavigationController
+    var rootViewController: UIViewController {
+        return navigationController
+    }
+    
     var index: Int {
         preconditionFailure("\(#function) should be overriden by subclass!")
     }
     
     private var tabBarItem: UITabBarItem {
-        let item = configureTabBarItem(for: viewController)
+        let item = configureTabBarItem(for: navigationController)
         item.tag = index
         return item
     }
@@ -29,7 +33,7 @@ class TabCoordinator: Coordinator {
     }
     
     override func start() {
-        viewController.tabBarItem = tabBarItem
+        navigationController.tabBarItem = tabBarItem
         navigationController.setViewControllers([viewController], animated: true)
     }
     
