@@ -17,7 +17,6 @@ protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
     func configureFooterView(for tableView: UITableView)
     func saveWorkout()
     func setWorkoutDate()
-    func setWorkoutDuration()
 }
 
 class AddWorkoutVC: BaseVC {
@@ -81,7 +80,8 @@ extension AddWorkoutVC {
     
     static func create() -> UIViewController {
         let viewController = Self.instantiateFromStoryboard()
-        viewController.viewModel = AddWorkoutViewModel(workoutDurationViewModel: WorkoutDurationViewModel())
+        let viewModel = WorkoutDurationViewModel(workoutDuration: Observable<String>())
+        viewController.viewModel = AddWorkoutViewModel(workoutDurationViewModel: viewModel)
         return viewController
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import TwoWayBondage
 
 private enum WorkoutDurationType: String, CaseIterable {
     case veryShort = "15 min"
@@ -19,7 +20,12 @@ private enum WorkoutDurationType: String, CaseIterable {
 class WorkoutDurationViewModel: WorkoutDurationViewModelProtocol {
     typealias WorkoutDurationConfigurator = ViewConfigurator<WorkoutDurationTableViewCell>
     
+    var workoutDuration: Observable<String>
     private var availableOptions: [WorkoutDurationType]!
+    
+    init(workoutDuration: Observable<String>) {
+        self.workoutDuration = workoutDuration
+    }
     
     // MARK: Coordinatable
     func start() {
@@ -40,6 +46,13 @@ class WorkoutDurationViewModel: WorkoutDurationViewModelProtocol {
     }
     
     func viewConfigurator(at index: Int, in section: Int) -> Configurator {
-        return WorkoutDurationConfigurator(data: availableOptions[index].rawValue)
+        let configurator = WorkoutDurationConfigurator(data: availableOptions[index].rawValue)
+        configurator.actionOnTap = { [weak self] in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.workoutDuration.value = strongSelf.availableOptions[index].rawValue
+        }
+        
+        return configurator
     }
 }

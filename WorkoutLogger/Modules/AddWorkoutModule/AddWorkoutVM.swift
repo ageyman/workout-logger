@@ -18,6 +18,7 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     var shouldReloadData = Observable<Bool>(false)
     var reloadDataIn = Observable<(index: Int?, section: Int?)>(nil)
     private var exercisesArray = [ExerciseModel]()
+    private var workoutDuration: String?
     
     init(workoutDurationViewModel: WorkoutDurationViewModelProtocol) {
         self.workoutDurationViewModel = workoutDurationViewModel
@@ -25,6 +26,9 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     
     func start() {
         addNewExercise()
+        workoutDurationViewModel.workoutDuration.bind { [weak self] value in
+            self?.workoutDuration = value
+        }
     }
     
     func saveWorkout() {
@@ -32,10 +36,6 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     }
     
     func setWorkoutDate() {
-        
-    }
-    
-    func setWorkoutDuration() {
         
     }
     

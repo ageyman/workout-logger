@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import TwoWayBondage
 
 protocol WorkoutDurationViewModelProtocol: DataSource, Coordinatable {
-    
+    var workoutDuration: Observable<String> { get }
 }
 
 class WorkoutDurationView: BaseView {
