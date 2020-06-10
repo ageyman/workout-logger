@@ -10,6 +10,7 @@ import UIKit
 import TwoWayBondage
 
 protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
+    var shouldHideWorkoutDurationView: Observable<Bool> { get }
     var reloadDataIn: Observable<(index: Int?, section: Int?)> { get }
     var shouldReloadData: Observable<Bool> { get }
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol { get }
@@ -23,7 +24,6 @@ class AddWorkoutVC: BaseVC {
     private var viewModel: AddWorkoutViewModelProtocol! {
         didSet {
             viewModel.start()
-            setupBindings(for: viewModel)
         }
     }
     
@@ -37,13 +37,13 @@ class AddWorkoutVC: BaseVC {
     @IBOutlet weak var workoutDurationView: WorkoutDurationView! {
         didSet {
             workoutDurationView.viewModel = viewModel.workoutDurationViewModel
-            workoutDurationView.isHidden = true
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
+        setupBindings(for: viewModel)
         setupButtons(for: navigationItem)
     }
     
@@ -59,6 +59,10 @@ class AddWorkoutVC: BaseVC {
                 self?.tableView.reloadData()
             }
         }
+        
+        viewModel.shouldHideWorkoutDurationView.bindAndFire { [weak workoutDurationView] shouldHide in
+            workoutDurationView?.isHidden = shouldHide
+        }
     }
     
     private func setupButtons(for navigationItem: UINavigationItem) {
@@ -71,7 +75,7 @@ class AddWorkoutVC: BaseVC {
     }
     
     @objc private func didTapOnSetWorkoutDurationButton() {
-        workoutDurationView.isHidden = workoutDurationView.isHidden ? false : true
+        viewModel.shouldHideWorkoutDurationView.value?.toggle()
     }
     
     private func configureFooterView(for tableView: UITableView) {
@@ -92,7 +96,7 @@ extension AddWorkoutVC {
     
     static func create() -> UIViewController {
         let viewController = Self.instantiateFromStoryboard()
-        let viewModel = WorkoutDurationViewModel(workoutDuration: Observable<String>())
+        let viewModel = WorkoutDurationViewModel()
         viewController.viewModel = AddWorkoutViewModel(workoutDurationViewModel: viewModel)
         return viewController
     }

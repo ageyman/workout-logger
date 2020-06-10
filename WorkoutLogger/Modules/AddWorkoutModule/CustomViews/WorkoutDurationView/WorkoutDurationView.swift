@@ -11,6 +11,7 @@ import TwoWayBondage
 
 protocol WorkoutDurationViewModelProtocol: DataSource, Coordinatable {
     var workoutDuration: Observable<String> { get }
+    var shouldHideView: Observable<Bool> { get }
 }
 
 class WorkoutDurationView: BaseView {

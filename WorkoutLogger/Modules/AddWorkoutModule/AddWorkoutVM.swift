@@ -15,6 +15,7 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     typealias ExerciseSectionFooterViewConfigurator = ViewConfigurator<ExerciseSectionFooterView>
     
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol
+    var shouldHideWorkoutDurationView = Observable<Bool>()
     var shouldReloadData = Observable<Bool>(false)
     var reloadDataIn = Observable<(index: Int?, section: Int?)>(nil)
     private var exercisesArray = [ExerciseModel]()
@@ -28,6 +29,12 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         addNewExercise()
         workoutDurationViewModel.workoutDuration.bind { [weak self] value in
             self?.workoutDuration = value
+        }
+        
+        workoutDurationViewModel
+            .shouldHideView
+            .bindAndFire { [weak shouldHideWorkoutDurationView] shouldHideView in
+                shouldHideWorkoutDurationView?.value = shouldHideView
         }
     }
     
