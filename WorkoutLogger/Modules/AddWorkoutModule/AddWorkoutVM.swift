@@ -16,8 +16,7 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol
     var shouldHideWorkoutDurationView = Observable<Bool>()
-    var shouldReloadData = Observable<Bool>(false)
-    var reloadDataIn = Observable<(index: Int?, section: Int?)>(nil)
+    var updateDataIn = Observable<(indexPath: IndexPath, isSection: Bool)>()
     private var exercisesArray = [ExerciseModel]()
     private var workoutDuration: String?
     
@@ -51,13 +50,15 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         let exerciseValues = configureNewSetValues()
         let exercise = ExerciseModel(name: name, values: [exerciseValues])
         exercisesArray.append(exercise)
-        shouldReloadData.value = true
+        updateDataIn.value = (IndexPath(row: 0, section: exercisesArray.count - 1), true)
     }
     
     private func addNewSet(in section: Int) {
         let exerciseValues = configureNewSetValues()
         exercisesArray[section].values.append(exerciseValues)
-        reloadDataIn.value = (nil, section)
+        let indexPath = IndexPath(row: exercisesArray[section].values.count - 1, section: section)
+        let isSection = false
+        updateDataIn.value = (indexPath, isSection)
     }
     
     private func configureNewSetValues() -> ExerciseValuesModel {

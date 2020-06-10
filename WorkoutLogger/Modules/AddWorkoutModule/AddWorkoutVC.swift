@@ -11,8 +11,7 @@ import TwoWayBondage
 
 protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
     var shouldHideWorkoutDurationView: Observable<Bool> { get }
-    var reloadDataIn: Observable<(index: Int?, section: Int?)> { get }
-    var shouldReloadData: Observable<Bool> { get }
+    var updateDataIn: Observable<(indexPath: IndexPath, isSection: Bool)> { get }
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol { get }
     
     func addNewExercise()
@@ -48,15 +47,11 @@ class AddWorkoutVC: BaseVC {
     }
     
     private func setupBindings(for viewModel: AddWorkoutViewModelProtocol) {
-        viewModel.reloadDataIn.bind { [weak self] value in
-            guard let strongSelf = self, let section = value.section else { return }
-            
-            strongSelf.tableView.reloadSections(IndexSet(integer: section), with: .automatic)
-        }
-        
-        viewModel.shouldReloadData.bind { [weak self] shouldReload in
-            if shouldReload {
-                self?.tableView.reloadData()
+        viewModel.updateDataIn.bind { [weak tableView] value in
+            if value.isSection {
+                tableView?.insertSections(IndexSet(integer: value.indexPath.section), with: .middle)
+            } else {
+                tableView?.insertRows(at: [value.indexPath], with: .automatic)
             }
         }
         
