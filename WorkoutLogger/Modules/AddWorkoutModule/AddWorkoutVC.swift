@@ -14,7 +14,7 @@ protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
     var shouldReloadData: Observable<Bool> { get }
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol { get }
     
-    func configureFooterView(for tableView: UITableView)
+    func addNewExercise()
     func saveWorkout()
     func setWorkoutDate()
 }
@@ -30,7 +30,7 @@ class AddWorkoutVC: BaseVC {
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.register(with: viewModel)
-            viewModel.configureFooterView(for: tableView)
+            configureFooterView(for: tableView)
         }
     }
     
@@ -72,6 +72,18 @@ class AddWorkoutVC: BaseVC {
     
     @objc private func didTapOnSetWorkoutDurationButton() {
         workoutDurationView.isHidden = workoutDurationView.isHidden ? false : true
+    }
+    
+    private func configureFooterView(for tableView: UITableView) {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
+        button.addTarget(self, action: #selector(didTapOnAddNewExerciseButton), for: .touchUpInside)
+        button.setTitle(" + Add New Exercise", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        tableView.tableFooterView = button
+    }
+    
+    @objc private func didTapOnAddNewExerciseButton() {
+        viewModel.addNewExercise()
     }
 }
 

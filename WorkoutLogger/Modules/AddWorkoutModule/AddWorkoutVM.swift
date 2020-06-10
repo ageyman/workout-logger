@@ -39,30 +39,18 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         
     }
     
-    func configureFooterView(for tableView: UITableView) {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
-        button.addTarget(self, action: #selector(didTapOnAddNewExerciseButton), for: .touchUpInside)
-        button.setTitle(" + Add New Exercise", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        tableView.tableFooterView = button
-    }
-    
-    @objc private func didTapOnAddNewExerciseButton() {
-        addNewExercise()
+    func addNewExercise() {
+        let name = Observable("")
+        let exerciseValues = configureNewSetValues()
+        let exercise = ExerciseModel(name: name, values: [exerciseValues])
+        exercisesArray.append(exercise)
+        shouldReloadData.value = true
     }
     
     private func addNewSet(in section: Int) {
         let exerciseValues = configureNewSetValues()
         exercisesArray[section].values.append(exerciseValues)
         reloadDataIn.value = (nil, section)
-    }
-    
-    private func addNewExercise() {
-        let name = Observable("")
-        let exerciseValues = configureNewSetValues()
-        let exercise = ExerciseModel(name: name, values: [exerciseValues])
-        exercisesArray.append(exercise)
-        shouldReloadData.value = true
     }
     
     private func configureNewSetValues() -> ExerciseValuesModel {
