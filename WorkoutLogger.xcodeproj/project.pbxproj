@@ -16,11 +16,15 @@
 		C73C6CA4247DA7B700F3C2AC /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */; };
 		C74B009C248C2C4200664715 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74B009B248C2C4200664715 /* CoreDataRepository.swift */; };
 		C7551884247E5D800048DE8F /* TabItemTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7551883247E5D800048DE8F /* TabItemTypeEnum.swift */; };
+		C75555DE24A0A42500885B94 /* WorkoutCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75555DD24A0A42500885B94 /* WorkoutCalendarView.swift */; };
+		C75555E024A0A45500885B94 /* WorkoutCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C75555DF24A0A45500885B94 /* WorkoutCalendarView.xib */; };
+		C75555E224A0A47A00885B94 /* WorkoutCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75555E124A0A47A00885B94 /* WorkoutCalendarViewModel.swift */; };
 		C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */; };
 		C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75B041E247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld */; };
 		C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75B0421247DA3B5000EF5F2 /* Assets.xcassets */; };
 		C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B0423247DA3B5000EF5F2 /* LaunchScreen.storyboard */; };
 		C75C86D124864E1000184B8D /* KeyboardObserversHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75C86D024864E1000184B8D /* KeyboardObserversHandler.swift */; };
+		C765E67C24A1413C00D6B86B /* Date+ToStringWithFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765E67B24A1413C00D6B86B /* Date+ToStringWithFormat.swift */; };
 		C791DE98247E3C2B007E223E /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DE97247E3C2B007E223E /* TabBarCoordinator.swift */; };
 		C791DE9E247E43AE007E223E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C791DE9D247E43AE007E223E /* Main.storyboard */; };
 		C791DEA0247E43CC007E223E /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DE9F247E43CC007E223E /* TabCoordinator.swift */; };
@@ -62,6 +66,9 @@
 		C73C6CA3247DA7B700F3C2AC /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		C74B009B248C2C4200664715 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		C7551883247E5D800048DE8F /* TabItemTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemTypeEnum.swift; sourceTree = "<group>"; };
+		C75555DD24A0A42500885B94 /* WorkoutCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalendarView.swift; sourceTree = "<group>"; };
+		C75555DF24A0A45500885B94 /* WorkoutCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutCalendarView.xib; sourceTree = "<group>"; };
+		C75555E124A0A47A00885B94 /* WorkoutCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCalendarViewModel.swift; sourceTree = "<group>"; };
 		C75B0412247DA3B4000EF5F2 /* WorkoutLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75B0415247DA3B4000EF5F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C75B041F247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutLogger.xcdatamodel; sourceTree = "<group>"; };
@@ -69,6 +76,7 @@
 		C75B0424247DA3B5000EF5F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75B0426247DA3B5000EF5F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C75C86D024864E1000184B8D /* KeyboardObserversHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserversHandler.swift; sourceTree = "<group>"; };
+		C765E67B24A1413C00D6B86B /* Date+ToStringWithFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToStringWithFormat.swift"; sourceTree = "<group>"; };
 		C791DE97247E3C2B007E223E /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		C791DE9D247E43AE007E223E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C791DE9F247E43CC007E223E /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
@@ -153,6 +161,16 @@
 				C74B009B248C2C4200664715 /* CoreDataRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C75555DC24A0A3FE00885B94 /* WorkoutCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				C75555DD24A0A42500885B94 /* WorkoutCalendarView.swift */,
+				C75555DF24A0A45500885B94 /* WorkoutCalendarView.xib */,
+				C75555E124A0A47A00885B94 /* WorkoutCalendarViewModel.swift */,
+			);
+			path = WorkoutCalendarView;
 			sourceTree = "<group>";
 		};
 		C75B0409247DA3B4000EF5F2 = {
@@ -248,6 +266,7 @@
 		C791DEB3247E49FB007E223E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C765E67B24A1413C00D6B86B /* Date+ToStringWithFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +283,7 @@
 		C7D7FFB324825307003D04F4 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				C75555DC24A0A3FE00885B94 /* WorkoutCalendarView */,
 				C7EAE31C24825494002AE5E7 /* WorkoutTextFieldView.swift */,
 				C7EAE31A24825473002AE5E7 /* WorkoutTextFieldView.xib */,
 			);
@@ -367,6 +387,7 @@
 			files = (
 				C791DE9E247E43AE007E223E /* Main.storyboard in Resources */,
 				C7F99F012480F5D00026933A /* ExerciseTableViewCell.xib in Resources */,
+				C75555E024A0A45500885B94 /* WorkoutCalendarView.xib in Resources */,
 				C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */,
 				C7EAE31B24825473002AE5E7 /* WorkoutTextFieldView.xib in Resources */,
 				C7E9DBCC248D6985001BD2AD /* WorkoutDurationView.xib in Resources */,
@@ -428,9 +449,11 @@
 			files = (
 				C70C588B2484DA8000133761 /* ExerciseModel.swift in Sources */,
 				C75B0420247DA3B4000EF5F2 /* WorkoutLogger.xcdatamodeld in Sources */,
+				C75555DE24A0A42500885B94 /* WorkoutCalendarView.swift in Sources */,
 				C791DEB7247E4B85007E223E /* BaseVC.swift in Sources */,
 				C75C86D124864E1000184B8D /* KeyboardObserversHandler.swift in Sources */,
 				C791DEA0247E43CC007E223E /* TabCoordinator.swift in Sources */,
+				C765E67C24A1413C00D6B86B /* Date+ToStringWithFormat.swift in Sources */,
 				C7F99F002480F5D00026933A /* ExerciseTableViewCell.swift in Sources */,
 				C74B009C248C2C4200664715 /* CoreDataRepository.swift in Sources */,
 				C7EAE31D24825494002AE5E7 /* WorkoutTextFieldView.swift in Sources */,
@@ -447,6 +470,7 @@
 				C791DEAE247E461D007E223E /* HistoryVC.swift in Sources */,
 				C791DE98247E3C2B007E223E /* TabBarCoordinator.swift in Sources */,
 				C791DEB2247E4631007E223E /* HistoryCoordinator.swift in Sources */,
+				C75555E224A0A47A00885B94 /* WorkoutCalendarViewModel.swift in Sources */,
 				C7551884247E5D800048DE8F /* TabItemTypeEnum.swift in Sources */,
 				C75B0416247DA3B4000EF5F2 /* AppDelegate.swift in Sources */,
 				C7E9DBCA248D696D001BD2AD /* WorkoutDurationView.swift in Sources */,

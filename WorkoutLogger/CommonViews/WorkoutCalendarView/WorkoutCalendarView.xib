@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkoutCalendarView" customModule="WorkoutLogger" customModuleProvider="target">
+            <connections>
+                <outlet property="calendarView" destination="PGy-wz-fly" id="74O-AM-J6K"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="775" height="742"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGy-wz-fly" customClass="CalendarView" customModule="KDCalendar">
+                    <rect key="frame" x="0.0" y="44" width="775" height="664"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="PGy-wz-fly" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FTh-Hu-DCf"/>
+                <constraint firstItem="PGy-wz-fly" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ZTf-4D-O6K"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PGy-wz-fly" secondAttribute="trailing" id="kDb-TR-i5T"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="PGy-wz-fly" secondAttribute="bottom" id="t2t-21-raw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-313.768115942029" y="-30.133928571428569"/>
+        </view>
+    </objects>
+</document>

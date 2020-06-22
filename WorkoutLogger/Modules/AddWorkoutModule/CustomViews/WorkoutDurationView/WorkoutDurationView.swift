@@ -16,6 +16,7 @@ protocol WorkoutDurationViewModelProtocol: DataSource, Coordinatable {
 
 class WorkoutDurationView: BaseView {
     @IBOutlet weak var tableView: UITableView!
+    
     var viewModel: WorkoutDurationViewModelProtocol! {
         didSet {
             viewModel.start()

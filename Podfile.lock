@@ -1,20 +1,26 @@
 PODS:
+  - KDCalendar (1.8.9):
+    - KDCalendar/EventManager (= 1.8.9)
+  - KDCalendar/EventManager (1.8.9)
   - SimpleTabBarAnimations (1.1.0)
   - TwoWayBondage (2.0.1)
 
 DEPENDENCIES:
+  - KDCalendar
   - SimpleTabBarAnimations
   - TwoWayBondage
 
 SPEC REPOS:
   trunk:
+    - KDCalendar
     - SimpleTabBarAnimations
     - TwoWayBondage
 
 SPEC CHECKSUMS:
+  KDCalendar: a587bc486b992d82ef94bd04001fce9baf45e518
   SimpleTabBarAnimations: 62982ab51a516edd631e04c3a1c6e83d51e9c49c
   TwoWayBondage: fb56f9e15c725628a4f2b8ecb2a987673286aea9
 
-PODFILE CHECKSUM: edef8f2f1226495f2675ee697ae2a0faae621caa
+PODFILE CHECKSUM: fb1ddea6eb103ce34c84705854e2e581a80d1a27
 
 COCOAPODS: 1.9.1
