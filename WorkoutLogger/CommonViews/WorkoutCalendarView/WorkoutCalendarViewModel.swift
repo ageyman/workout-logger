@@ -26,5 +26,6 @@ private struct WorkoutCalendarConstants {
 class WorkoutCalendarViewModel: WorkoutCalendarViewModelProtocol {
     var startDate = WorkoutCalendarConstants.startDate
     var endDate = WorkoutCalendarConstants.endDate
-    var selectedDate =  Observable<Date>(nil)
+    var selectedDate = Observable<Date>(Date())
+    var shouldHideView = Observable<Bool>(true)
 }

@@ -14,14 +14,19 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
     typealias ExerciseSectionHeaderViewConfigurator = ViewConfigurator<ExerciseSectionHeaderView>
     typealias ExerciseSectionFooterViewConfigurator = ViewConfigurator<ExerciseSectionFooterView>
     
+    var workoutDateViewModel: WorkoutCalendarViewModelProtocol
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol
+    var shouldHideWorkoutDateView = Observable<Bool>()
     var shouldHideWorkoutDurationView = Observable<Bool>()
     var updateDataIn = Observable<(indexPath: IndexPath, isSection: Bool)>()
     private var exercisesArray = [ExerciseModel]()
     private var workoutDuration: String?
+    private var workoutDate: String?
     
-    init(workoutDurationViewModel: WorkoutDurationViewModelProtocol) {
+    init(workoutDurationViewModel: WorkoutDurationViewModelProtocol,
+         workoutDateViewModel: WorkoutCalendarViewModelProtocol) {
         self.workoutDurationViewModel = workoutDurationViewModel
+        self.workoutDateViewModel = workoutDateViewModel
     }
     
     func start() {
@@ -30,18 +35,24 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
             self?.workoutDuration = value
         }
         
+        workoutDateViewModel.selectedDate.bindAndFire { [weak self] value in
+            self?.workoutDate = value.toString(with: "DD MMMM YYYY")
+        }
+        
         workoutDurationViewModel
             .shouldHideView
             .bindAndFire { [weak shouldHideWorkoutDurationView] shouldHideView in
                 shouldHideWorkoutDurationView?.value = shouldHideView
         }
+        
+        workoutDateViewModel
+            .shouldHideView
+            .bindAndFire { [weak shouldHideWorkoutDateView] shouldHideView in
+                shouldHideWorkoutDateView?.value = shouldHideView
+        }
     }
     
     func saveWorkout() {
-        
-    }
-    
-    func setWorkoutDate() {
         
     }
     

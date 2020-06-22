@@ -14,18 +14,20 @@ protocol WorkoutCalendarViewModelProtocol {
     var startDate: Date { get }
     var endDate: Date { get }
     var selectedDate: Observable<Date> { get set }
+    var shouldHideView: Observable<Bool> { get }
 }
 
 class WorkoutCalendarView: BaseView {
-    @IBOutlet weak var calendarView: CalendarView! {
+    @IBOutlet weak var calendarView: CalendarView!
+    
+    var viewModel: WorkoutCalendarViewModelProtocol! {
         didSet {
             calendarView.dataSource = self
             calendarView.delegate = self
-            calendarView.setDisplayDate(Date())
+            calendarView.setDisplayDate(viewModel.selectedDate.value ?? Date())
+            calendarView.multipleSelectionEnable = false
         }
     }
-    
-    var viewModel: WorkoutCalendarViewModelProtocol!
 }
 
 extension WorkoutCalendarView: CalendarViewDataSource {
@@ -38,9 +40,7 @@ extension WorkoutCalendarView: CalendarViewDataSource {
     }
     
     func headerString(_ date: Date) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM YYYY"
-        return dateFormatter.string(from: date)
+        return date.toString(with: "MMMM YYYY")
     }
 }
 
@@ -50,7 +50,8 @@ extension WorkoutCalendarView: CalendarViewDelegate {
     }
     
     func calendar(_ calendar: CalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) {
-        
+        viewModel.selectedDate.value = date
+        viewModel.shouldHideView.value = true
     }
     
     func calendar(_ calendar: CalendarView, canSelectDate date: Date) -> Bool {
@@ -58,7 +59,7 @@ extension WorkoutCalendarView: CalendarViewDelegate {
     }
     
     func calendar(_ calendar: CalendarView, didDeselectDate date: Date) {
-        viewModel.selectedDate.value = date
+        
     }
     
     func calendar(_ calendar: CalendarView, didLongPressDate date: Date, withEvents events: [CalendarEvent]?) {

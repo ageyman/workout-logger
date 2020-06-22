@@ -11,12 +11,13 @@ import TwoWayBondage
 
 protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
     var shouldHideWorkoutDurationView: Observable<Bool> { get }
+    var shouldHideWorkoutDateView: Observable<Bool> { get }
     var updateDataIn: Observable<(indexPath: IndexPath, isSection: Bool)> { get }
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol { get }
+    var workoutDateViewModel: WorkoutCalendarViewModelProtocol { get }
     
     func addNewExercise()
     func saveWorkout()
-    func setWorkoutDate()
 }
 
 class AddWorkoutVC: BaseVC {
@@ -39,6 +40,12 @@ class AddWorkoutVC: BaseVC {
         }
     }
     
+    @IBOutlet weak var workoutDateView: WorkoutCalendarView! {
+        didSet {
+            workoutDateView.viewModel = viewModel.workoutDateViewModel
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
@@ -58,6 +65,10 @@ class AddWorkoutVC: BaseVC {
         viewModel.shouldHideWorkoutDurationView.bindAndFire { [weak workoutDurationView] shouldHide in
             workoutDurationView?.isHidden = shouldHide
         }
+        
+        viewModel.shouldHideWorkoutDateView.bindAndFire { [weak workoutDateView] shoulHide in
+            workoutDateView?.isHidden = shoulHide
+        }
     }
     
     private func setupButtons(for navigationItem: UINavigationItem) {
@@ -65,12 +76,21 @@ class AddWorkoutVC: BaseVC {
                                              style: .plain,
                                              target: self,
                                              action: #selector(didTapOnSetWorkoutDurationButton))
-        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        navigationItem.setLeftBarButtonItems([spacer, spacer, durationButton], animated: true)
+        let dateButton = UIBarButtonItem(image: UIImage(systemName: "calendar"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(didTapOnSetWorkoutDateButton))
+        navigationItem.setLeftBarButtonItems([durationButton, dateButton], animated: true)
     }
     
     @objc private func didTapOnSetWorkoutDurationButton() {
         viewModel.shouldHideWorkoutDurationView.value?.toggle()
+        viewModel.shouldHideWorkoutDateView.value = true
+    }
+    
+    @objc private func didTapOnSetWorkoutDateButton() {
+        viewModel.shouldHideWorkoutDateView.value?.toggle()
+        viewModel.shouldHideWorkoutDurationView.value = true
     }
     
     private func configureFooterView(for tableView: UITableView) {
@@ -91,8 +111,10 @@ extension AddWorkoutVC {
     
     static func create() -> UIViewController {
         let viewController = Self.instantiateFromStoryboard()
-        let viewModel = WorkoutDurationViewModel()
-        viewController.viewModel = AddWorkoutViewModel(workoutDurationViewModel: viewModel)
+        let workoutDurationViewModel = WorkoutDurationViewModel()
+        let workoutDateViewModel = WorkoutCalendarViewModel()
+        viewController.viewModel = AddWorkoutViewModel(workoutDurationViewModel: workoutDurationViewModel,
+                                                       workoutDateViewModel: workoutDateViewModel)
         return viewController
     }
 }

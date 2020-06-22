@@ -24,6 +24,7 @@
 		C75B0422247DA3B5000EF5F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75B0421247DA3B5000EF5F2 /* Assets.xcassets */; };
 		C75B0425247DA3B5000EF5F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B0423247DA3B5000EF5F2 /* LaunchScreen.storyboard */; };
 		C75C86D124864E1000184B8D /* KeyboardObserversHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75C86D024864E1000184B8D /* KeyboardObserversHandler.swift */; };
+		C765E67C24A1413C00D6B86B /* Date+ToStringWithFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765E67B24A1413C00D6B86B /* Date+ToStringWithFormat.swift */; };
 		C791DE98247E3C2B007E223E /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DE97247E3C2B007E223E /* TabBarCoordinator.swift */; };
 		C791DE9E247E43AE007E223E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C791DE9D247E43AE007E223E /* Main.storyboard */; };
 		C791DEA0247E43CC007E223E /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791DE9F247E43CC007E223E /* TabCoordinator.swift */; };
@@ -75,6 +76,7 @@
 		C75B0424247DA3B5000EF5F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75B0426247DA3B5000EF5F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C75C86D024864E1000184B8D /* KeyboardObserversHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserversHandler.swift; sourceTree = "<group>"; };
+		C765E67B24A1413C00D6B86B /* Date+ToStringWithFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToStringWithFormat.swift"; sourceTree = "<group>"; };
 		C791DE97247E3C2B007E223E /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		C791DE9D247E43AE007E223E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C791DE9F247E43CC007E223E /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		C791DEB3247E49FB007E223E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C765E67B24A1413C00D6B86B /* Date+ToStringWithFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				C791DEB7247E4B85007E223E /* BaseVC.swift in Sources */,
 				C75C86D124864E1000184B8D /* KeyboardObserversHandler.swift in Sources */,
 				C791DEA0247E43CC007E223E /* TabCoordinator.swift in Sources */,
+				C765E67C24A1413C00D6B86B /* Date+ToStringWithFormat.swift in Sources */,
 				C7F99F002480F5D00026933A /* ExerciseTableViewCell.swift in Sources */,
 				C74B009C248C2C4200664715 /* CoreDataRepository.swift in Sources */,
 				C7EAE31D24825494002AE5E7 /* WorkoutTextFieldView.swift in Sources */,

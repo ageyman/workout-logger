@@ -30,21 +30,30 @@
                                     <constraint firstAttribute="width" secondItem="jnY-EY-a0b" secondAttribute="height" multiplier="1:1.5" id="fsg-Qi-J4I"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KD-OP-9a1" customClass="WorkoutCalendarView" customModule="WorkoutLogger" customModuleProvider="target">
+                                <rect key="frame" x="108.5" y="0.0" width="197" height="295.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rk3-9q-gaK" secondAttribute="bottom" id="3Ey-8s-wjC"/>
                             <constraint firstAttribute="top" secondItem="jnY-EY-a0b" secondAttribute="top" id="6op-Kb-Zaj"/>
                             <constraint firstItem="jnY-EY-a0b" firstAttribute="height" secondItem="PY3-v2-b23" secondAttribute="height" multiplier="0.33" id="ApX-Av-WRe"/>
+                            <constraint firstItem="5KD-OP-9a1" firstAttribute="trailing" secondItem="jnY-EY-a0b" secondAttribute="trailing" id="NhR-mh-2o4"/>
                             <constraint firstItem="rk3-9q-gaK" firstAttribute="top" secondItem="94i-gh-W4b" secondAttribute="top" id="QZN-bH-Rg4"/>
                             <constraint firstItem="94i-gh-W4b" firstAttribute="trailing" secondItem="rk3-9q-gaK" secondAttribute="trailing" id="W7M-hd-iRw"/>
+                            <constraint firstItem="5KD-OP-9a1" firstAttribute="leading" secondItem="jnY-EY-a0b" secondAttribute="leading" id="dxa-3k-9Sn"/>
+                            <constraint firstItem="5KD-OP-9a1" firstAttribute="bottom" secondItem="jnY-EY-a0b" secondAttribute="bottom" id="oue-lc-GgP"/>
                             <constraint firstItem="rk3-9q-gaK" firstAttribute="leading" secondItem="94i-gh-W4b" secondAttribute="leading" id="rLX-Wx-x32"/>
                             <constraint firstItem="jnY-EY-a0b" firstAttribute="centerX" secondItem="94i-gh-W4b" secondAttribute="centerX" id="rpZ-eo-JlW"/>
+                            <constraint firstItem="5KD-OP-9a1" firstAttribute="top" secondItem="jnY-EY-a0b" secondAttribute="top" id="wps-Ue-fL6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="94i-gh-W4b"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="rk3-9q-gaK" id="sFq-WS-pz8"/>
+                        <outlet property="workoutDateView" destination="5KD-OP-9a1" id="RLJ-MC-Ebm"/>
                         <outlet property="workoutDurationView" destination="jnY-EY-a0b" id="Sie-Yz-fuc"/>
                     </connections>
                 </viewController>
