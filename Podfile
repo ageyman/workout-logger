@@ -8,4 +8,5 @@ target 'WorkoutLogger' do
   # Pods for WorkoutLogger
 pod 'SimpleTabBarAnimations'
 pod 'TwoWayBondage'
+pod 'KDCalendar'
 end
