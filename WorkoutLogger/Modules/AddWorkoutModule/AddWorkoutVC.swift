@@ -16,6 +16,7 @@ protocol AddWorkoutViewModelProtocol: DataSource, Coordinatable {
     var workoutDurationViewModel: WorkoutDurationViewModelProtocol { get }
     var workoutDateViewModel: WorkoutCalendarViewModelProtocol { get }
     
+    func deleteWorkoutElement(at indexPath: IndexPath)
     func addNewExercise()
     func saveWorkout()
 }
@@ -51,6 +52,7 @@ class AddWorkoutVC: BaseVC {
         registerForKeyboardNotifications()
         setupBindings(for: viewModel)
         setupButtons(for: navigationItem)
+        addGestureForKeyboardDissmissOnTap()
     }
     
     private func setupBindings(for viewModel: AddWorkoutViewModelProtocol) {
@@ -104,6 +106,15 @@ class AddWorkoutVC: BaseVC {
     @objc private func didTapOnAddNewExerciseButton() {
         viewModel.addNewExercise()
     }
+    
+    private func addGestureForKeyboardDissmissOnTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tableView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 // MARK: Scene Factory
@@ -143,6 +154,17 @@ extension AddWorkoutVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let configuartor = viewModel.footerViewConfigurator(in: section) else { return nil }
         return tableView.configureHeaderFooter(for: configuartor)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteWorkoutElement(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }
 

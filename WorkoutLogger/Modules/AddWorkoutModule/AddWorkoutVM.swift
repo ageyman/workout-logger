@@ -64,6 +64,10 @@ class AddWorkoutViewModel: AddWorkoutViewModelProtocol {
         updateDataIn.value = (IndexPath(row: 0, section: exercisesArray.count - 1), true)
     }
     
+    func deleteWorkoutElement(at indexPath: IndexPath) {
+        exercisesArray[indexPath.section].values.remove(at: indexPath.row)
+    }
+    
     private func addNewSet(in section: Int) {
         let exerciseValues = configureNewSetValues()
         exercisesArray[section].values.append(exerciseValues)
